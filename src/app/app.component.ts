@@ -6,5 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-app-test';
+  userObject:{firstName:string, lastName:string}
+
+  constructor(){
+    this.userObject = {
+      firstName : "Nilkanth",
+      lastName : "shirodkar"
+    }
+  }
+
+  changeValue(){
+
+    this.userObject.firstName = "Hello";
+
+  }
+
+  changeObject(){
+
+    this.userObject = {
+      firstName : "Test",
+      lastName : "world"
+    }
+  }
+
 }
