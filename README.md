@@ -1,27 +1,9 @@
-# AngularAppTest
+Angular provides two ways for Change Detection Strategies, the default, and onPush. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+ChangeDetectionStrategy.Default :- By default angular will check every time if something has been changed, it may be a property change or object change. 
 
-## Development server
+ChangeDetectionStrategy.onPush :- onPush strategy on the component will perform a check for change of Input reference type, If there is a change in the property then it will not be triggered. In POC I have implemented it.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Created two button change First Name and change Full name, onclick of change first name only object property is changed. onclick of change full name => object reference is changed. 
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+So If I'm using ChangeDetectionStrategy.Default  both onclick function will work, but If I'm using ChangeDetectionStrategy.onPush only change full name button will work because I'm changing the reference. 
